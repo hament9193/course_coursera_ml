@@ -21,9 +21,10 @@ grad = zeros(size(theta));
 %
 
 
-
+%this is the cost value
 J = (1 / m) * sum( -y'*log(sigmoid(X*theta)) - (1-y)'*log( 1 - sigmoid(X*theta)) );
 
+%this is the gradient vector.
 grad = (1 / m) * sum( X .* repmat((sigmoid(X*theta) - y), 1, size(X,2)) );
 
 
